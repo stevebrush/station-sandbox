@@ -1,0 +1,92 @@
+@import "meyer-reset/_meyer-reset";
+
+body {
+  font-family: monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 750px;
+  margin: 0 auto;
+}
+
+.meter {
+  position:relative;
+
+  &:after {
+    display: "";
+    clear: both;
+  }
+
+  > .label {
+    width: 20px;
+    display: inline-block;
+    float: left;
+  }
+
+  > .gauge {
+    display: inline-block;
+    position: relative;
+    z-index:2;
+  }
+
+  > .muted {
+    position: absolute;
+    left: 20px;
+    top:0;
+    z-index:1;
+  }
+}
+
+.row {
+  margin-left: -5px;
+  margin-right: -5px;
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  > [class^="col-"] {
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  > .col-2 {
+    width: 16.6666667%;
+  }
+
+  > .col-5 {
+    width: 41.6666667%;
+  }
+
+  > .col-6 {
+    width: 50%;
+  }
+
+}
+
+
+.box {
+  padding: 5px;
+  border: 1px solid #000;
+  margin: 0 0 5px 0;
+  display: block;
+}
+
+.muted {
+  color: #aaa !important;
+  border-color: #aaa !important;
+}
+
+.panel {
+  .panel-heading {
+    margin-bottom: 10px;
+  }
+  .panel-body {}
+}

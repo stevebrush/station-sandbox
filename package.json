@@ -1,0 +1,29 @@
+{
+  "name": "station-sandbox",
+  "version": "1.0.0",
+  "description": "Various tests and prototypes",
+  "main": "gruntfile.js",
+  "scripts": {
+    "start": "bash ./bin/start.sh",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevebrush/station-sandbox.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevebrush/station-sandbox/issues"
+  },
+  "homepage": "https://github.com/stevebrush/station-sandbox#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-concat-sourcemap": "^0.4.3",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-html2js": "^0.3.5",
+    "grunt-sass": "^1.1.0"
+  }
+}

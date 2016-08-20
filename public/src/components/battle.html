@@ -1,0 +1,55 @@
+<div class="BattleController as battleCtrl">
+  <div class="row">
+    <div class="col-6">
+      <div class="panel">
+        <div class="panel-heading">
+          <h4 ng-bind="battleCtrl.enemy.name"></h4>
+          <div class="meter">
+            <span class="label">HP</span>
+            <div class="gauge">
+              <span ng-repeat="i in battleCtrl.genArray(battleCtrl.enemy.combo.health) track by $index">*</span>
+            </div>
+            <div class="gauge muted">
+              <span ng-repeat="i in battleCtrl.genArray(battleCtrl.enemy.health) track by $index">*</span>
+            </div>
+          </div>
+          <div class="meter">
+            <span class="label">AP</span>
+            <span ng-repeat="i in battleCtrl.genArray(battleCtrl.enemy.stamina) track by $index">-</span>
+          </div>
+        </div>
+        <div class="panel-body">
+          <span class="box" ng-repeat="action in battleCtrl.enemy.combo.actions track by $index" ng-bind="action.name" ng-class="{ 'muted': action.isComplete }"></span>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="panel">
+        <div class="panel-heading">
+          <h4 ng-bind="battleCtrl.player.name"></h4>
+          <div class="meter">
+            <span class="label">HP</span>
+            <span ng-repeat="i in battleCtrl.genArray(battleCtrl.player.health) track by $index">*</span>
+          </div>
+          <div class="meter">
+            <span class="label">AP</span>
+            <div class="gauge">
+              <span ng-repeat="i in battleCtrl.genArray(battleCtrl.player.combo.stamina) track by $index">-</span>
+            </div>
+            <div class="gauge muted">
+              <span ng-repeat="i in battleCtrl.genArray(battleCtrl.player.stamina) track by $index">-</span>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <span class="box" ng-repeat="action in battleCtrl.player.combo.actions track by $index" ng-bind="action.name" ng-class="{ 'muted': action.isComplete }"></span>
+          <div class="battle-controls">
+            <button ng-repeat="control in battleCtrl.player.controls track by $index" ng-click="battleCtrl.addAction(control)"><span ng-bind="::control.name"></span> (<span ng-bind="::control.effects.self.stamina"></span>)</button><br>
+            <button ng-click="battleCtrl.undo()">Undo</button><button ng-click="battleCtrl.battle()">Apply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
